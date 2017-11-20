@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Smile丶空白</title>
+
+	<link rel="stylesheet" href="css/jquery.fullpage.css">
+	<link rel="stylesheet" href="css/index.css">
+
+	<script type="text/javascript" src="renxi/jscex.min.js"></script>
+	<script type="text/javascript" src="renxi/jscex-parser.js"></script>
+	<script type="text/javascript" src="renxi/jscex-jit.js"></script>
+	<script type="text/javascript" src="renxi/jscex-builderbase.min.js"></script>
+	<script type="text/javascript" src="renxi/jscex-async.min.js"></script>
+	<script type="text/javascript" src="renxi/jscex-async-powerpack.min.js"></script>
+	<script type="text/javascript" src="renxi/functions.js" charset="utf-8"></script>
+	<script type="text/javascript" src="renxi/love.js" charset="utf-8"></script>
+</head>
+<body>
+
+	<div class="music" id="music">
+		<div id="audio-btn" class="on" onclick="music.changeClass(this,'media')">
+			<audio loop="loop" src="music/SeeYouAgain.mp3" id="media" preload="preload"></audio>
+		</div>
+	</div>
+
+	<div id="fullpage">
+		<!-- 第一屏 -->
+		<div class="section">
+			<div class="section1">
+				<!--start top-->
+				<div class="top">
+					<marquee>XXXXXXX!</marquee>
+				</div>
+				<div class="box">
+					<div class="pic">
+						<ul>
+							<li><img src="images/1.png" width="" height="" alt=""/></li>
+							<li><img src="images/2.png" width="" height="" alt=""/></li>
+							<li><img src="images/3.png" width="" height="" alt=""/></li>
+							<li><img src="images/4.png" width="" height="" alt=""/></li>
+							<li><img src="images/5.png" width="" height="" alt=""/></li>
+							<li><img src="images/6.png" width="" height="" alt=""/></li>
+						</ul>
+					</div>
+				</div>
+				<div id="text"></div>
+			</div>
+		</div>
+		<!-- 第二屏 -->
+		<div class="section">
+			<div id="main">
+ 				<div id="wrap">
+    				<div id="txt">
+    					<div id="code"> <font color="#FF0000"> <span class="say">		XXXXXXX</span><br>
+    					    <span class="say"> </span><br>
+    					    <span class="say"> XXXXXXX</span><br>
+    					    <span class="say"> </span><br>
+    					    <span class="say">XXXXXXX</span><br>
+    					    <span class="say"> </span><br>
+    					    <span class="say">XXXXXXX</span><br>
+    					    <span class="say"> </span><br>
+    					    <span class="say">XXXXXXX。</span><br>
+    					    <span class="say"> </span><br>
+    					    <span class="say"><span class="space"></span> -- XXXXXXX--</span> </font>
+    					    <p></p>
+    					  </div>
+    					</div>
+    					<div id="clock-box">
+      						<div id="clock"></div>
+    					</div>	
+    					<canvas id="canvas" width="1100" height="680"></canvas>
+  				</div>
+			</div>
+		</div>
+		<!-- 第三屏 -->
+		<div class="section">
+			<div class="section3">
+				<div class="img">
+					<img src="images/1714.gif" alt="">
+				</div>
+				<div class="say_text">
+					<a href="javasxript:;" class="say_current">
+						<em>
+						XXXXXXXXXXXXXX
+						</em>
+					</a>
+				</div>
+				<img src="images/bao.jpg" alt="" class="bao">
+
+			</div>
+		</div>
+		<!-- 第四屏 -->
+		<div class="section">
+			<div class="section4">
+				<img src="images/say_love.gif" alt="" class="say_love">
+				<div class="pic_img">
+					<img src="images/11.png" />
+        			<img src="images/12.png" />
+        			<img src="images/13.png" />
+        			<img src="images/14.png" />
+        			<img src="images/15.png" />
+        			<img src="images/16.png" />
+        			<img src="images/7.png" />
+        			<img src="images/8.png" />
+        			<img src="images/9.png" />
+				</div>
+			</div>
+		</div>
+		<!-- 第五屏 -->
+		<div class="section">
+			<div class="section5">
+				<div class="t">
+					<h3>我喜欢你!!!</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.min.js"></script>ss
+	<script src="js/jquery.fullpage.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/music.js"></script>
+	<script src="js/snow.js"></script>
+
+	<script>
+   		$(".pic ul li").each(function(i){//遍历
+		var deg=360/$(".pic ul li").size();//size个数
+		//当前的li对象 添加css样式
+		$(this).css({"transform":"rotateY("+deg*i+"deg) translateZ(216px)"});
+		
+		$.fn.snow({
+			minSize:10,
+			maxSize:15,
+			newOn:500,
+			flakeColor:"#ffffff"
+		});
+		});
+		var i=0;
+		var str="XXXXXXXXXXXXXXX";
+		window.onload=function typing(){
+		//获取div
+		var mydiv=document.getElementById("text");
+		mydiv.innerHTML+=str.charAt(i);
+		i++;
+		var id=setTimeout(typing,100);
+		if(i==str.length){
+			clearTimeout(id);
+		}
+		}
+    </script>
+
+</body>
+</html>

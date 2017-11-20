@@ -1,0 +1,357 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body{
+	font-family: Monospace;
+	background-color: #f0f0f0;
+	margin: 0px;
+	overflow: hidden;
+}
+.music{
+	position: fixed;
+	right: 50px;
+	top: 10px;
+	z-index:1000;
+}
+
+/* 音乐的样式 */
+#music #audio-btn{
+	width: 44px;
+	height: 44px; 
+	margin:100px auto;
+	background-size: 100% 100%;
+}
+#music .on{
+	background: url('../images/music_on.png') no-repeat 0 0;
+	-webkit-animation: rotating 1.2s linear infinite;
+	animation: rotating 1.2s linear infinite;
+}
+#music .off{
+	background: url('../images/music_off.png') no-repeat 0 0;
+}
+@-webkit-keyframes rotating {
+	from{
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+    	transform: rotate(0deg);
+	}
+	to{
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* 第一屏 */
+.section1{
+	width: 100%;
+	height: 100%;
+	background:url("../images/1.jpg");
+	background-size:cover; 
+	z-index: 10;
+}
+
+.top{
+	width:400px;
+	height:100px;
+	margin:0 auto;
+	line-height: 100px;
+	font-size:30px;
+	font-family:"华文行楷";
+	color:#fff;
+	margin-bottom: 60px;
+}
+.box{
+	width:310px;
+	height:310px;
+	margin:auto;
+	perspective:800px;
+}
+.box .pic{
+	position:relative;
+	transform-style:preserve-3d;
+	animation:play 10s linear infinite;
+}
+.box ul li{list-style:none;position:absolute;top:0;left:0;}
+
+@keyframes play{
+	from{transform:rotateY(0deg);}
+	to{transform:rotateY(360deg);}
+}
+
+#text{
+	width:50%;
+	height:200px;
+	color:#6fade1;
+	margin:auto;
+	font-size:24px;
+	font-family:"方正喵呜体";
+}
+
+
+/* 第二屏 */
+
+/* a {color:#000;font-size:14px;} */
+#main{
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+}
+#wrap{
+	position:relative;
+	margin:0 auto;
+	width:1100px;
+	height:680px;
+}
+#txt{
+	width:400px;
+	height:425px;
+	left:60px;
+	top:80px;
+	position:absolute;
+}
+#code{
+	display:none;
+	font-size:16px;
+}
+#clock-box {
+	position:absolute;
+	left:60px;
+	top:550px;
+	font-size:28px;
+	display:none;
+}
+#clock-box a {
+	font-size:28px;
+	text-decoration:none;
+}
+#clock{
+	margin-left:48px;
+}
+#clock .digit {
+	font-size:64px;
+}
+#canvas{
+	margin:0 auto;
+	width:1100px;
+	height:680px;
+}
+#error{
+	margin:0 auto;
+	text-align:center;
+	margin-top:60px;
+	display:none;
+}
+.hand{
+	cursor:pointer;
+}
+.say{
+	margin-left:5px;
+}
+.space{
+	margin-right:150px;
+}
+
+
+/* 第三屏 */
+.section3{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.img{
+	height:66px;
+	width:516px;
+	position: absolute;
+	/* left: 50%; */
+	left: 50px;
+	top: 100px;
+}
+
+.bao{
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+}
+
+
+.say_text{
+	width: 600px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -600px;
+	bottom: 50px;
+	text-align: center;
+}
+
+.say_text a.say_current{
+	color:#fff;
+	font-size:16px;
+	opacity: 0;
+}
+.say_text a.say_current.animated{
+	animation:show 1s 2s linear forwards;
+}
+@keyframes show{
+	from{
+		opacity: 0;
+	}
+	75%{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+.section4{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.say_love{
+	height: 225px;
+	width: 516px;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	z-index: 1;
+}
+.pic_img{
+    width: 950px;
+    height: 500px;
+    position: absolute;
+	right: 0;
+	top: 100px;
+}
+.pic_img img{
+    border: 2px solid #ccc;
+    padding:5px;
+    background: #fff;
+    border-radius:10px;
+    position: absolute;
+    width: 200px;
+    transition:all 1s;
+}
+.pic_img img:nth-of-type(odd){
+    transform:rotate(25deg);
+}
+.pic_img img:nth-of-type(even){
+    transform:rotate(-25deg);
+}
+.pic_img img:nth-of-type(1){
+    top:0;
+    left:0;
+}
+.pic_img img:nth-of-type(2){
+    top:0;
+    left:200px;
+}
+.pic_img img:nth-of-type(3){
+    top:0;
+    left:400px;
+}
+.pic_img img:nth-of-type(4){
+    top:0;
+    left:600px;
+}
+.pic_img img:nth-of-type(5){
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+.pic_img img:nth-of-type(6){
+    top:200px;
+    left:0;
+}
+.pic_img img:nth-of-type(7){
+    top:200px;
+    left:200px;
+}
+.pic_img img:nth-of-type(8){
+    top:200px;
+    left:400px;
+}
+.pic_img img:nth-of-type(9){
+   	top:200px;
+   	left:600px;
+}
+.pic_img img:hover{	
+	z-index:1;
+   	transform:rotate(0deg) scale(1.5);
+}
+.pic_img img:nth-of-type(5):hover {
+   	z-index:1;
+   	transform:translate(-50%,-50%) rotate(0deg) scale(1.5);
+}
+
+
+.section5{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 10;
+	background: url("../images/section5.jpg") no-repeat;
+	background-size: cover;
+}
+.section5 .t{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -150px;
+	top: 100px;
+	text-align: center;
+}
+.section5 .t h3{
+	line-height: 300px;
+	font-size:50px;
+	color:hotpink;
+}
+.section5 .t h3.animated{
+	animation:change 5s linear infinite  alternate;
+}
+
+@keyframes change{
+	from{
+		color:hotpink;
+	}
+	25%{
+		color:#842356;
+	}
+	50%{
+		color:#ef674d;
+	}
+	75%{
+		color:#d04759;
+	}
+	to{
+		color:hotpink;
+	}
+}
